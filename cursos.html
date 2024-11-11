@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Institute - Cursos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- Encabezado Hero -->
+    <header class="hero">
+        <div class="container">
+            <h1>Code Institute</h1>
+            <p>Descubre nuestros cursos y amplía tus conocimientos en tecnología</p>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            
+            <h1> Cursos </h1> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ingreso.html">Ingreso</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Cursos -->
+<section class="cursos py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Nuestros Cursos</h2>
+        <p class="text-center">Explora nuestros cursos, cada uno diseñado para fortalecer tus habilidades y brindarte una experiencia de aprendizaje completa.</p>
+        <div class="row">
+            
+            <!-- Card Curso Python -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/py.png" alt="Curso de Python" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Curso de Python</h3>
+                        <p class="card-text">Aprende desde lo básico hasta lo avanzado en Python, el lenguaje de programación más popular para análisis de datos y desarrollo web.</p>
+                        <p class="course-price">$100 USD</p>
+
+                        <button type="button" class="btn-custom-blue" data-bs-toggle="modal" data-bs-target="#courseModal"
+                            onclick="openCourseModal('Python', 'Temas que se trata en el curso de Python: Fundamentos de programación en Python, Estructuras de control, Estructuras indexadas, Procesamiento de texto en Python, Tipos de datos, Estructuras de datos compuestas, Condicionales, bucles y funciones, Comprobación de errores, Programación orientada a objetos')">
+                            Información
+                        </button>
+
+                        <button class="btn-custom-blue" onclick="startPurchaseProcess()">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Curso Java -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/ja.png" alt="Curso de Java" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Curso de Java</h3>
+                        <p class="card-text">Domina Java, un lenguaje versátil y robusto utilizado en aplicaciones empresariales, desarrollo de Android y más.</p>
+                        <p class="course-price">$120 USD</p>
+                        
+                        <button type="button" class="btn-custom-blue" data-bs-toggle="modal" data-bs-target="#courseModal"
+                            onclick="openCourseModal('Java', 'Materias que se verán en el curso de Java: Arreglos, incluyendo cómo definirlos, recorrerlos, e insertar registros , Strings como cadenas Java, Tipos de datos básicos, como int, short, long, double, float, boolean, byte, y char , Orientación a objetos , Lenguajes de programación y compilación de programas en Java, Instalación de Java, Entorno de desarrollo integrado para Java, Depuración de programas en Java,  Atributos y métodos estáticos en Java, Polimorfismo, clases abstractas e interfaces ')">
+                            Información
+                        </button>
+
+                        <button class="btn-custom-blue" onclick="startPurchaseProcess()">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Curso SQL -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/sq.png" alt="Curso de SQL" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Curso de SQL</h3>
+                        <p class="card-text">Conviértete en un experto en bases de datos con SQL, el lenguaje clave para la administración y análisis de datos.</p>
+                        <p class="course-price">$90 USD</p>
+                        
+                        <button type="button" class="btn-custom-blue" data-bs-toggle="modal" data-bs-target="#courseModal"
+                            onclick="openCourseModal('SQL', 'En el programa se enseña a diseñar bases de datos relacionales, a crear esquemas de tablas y a utilizar SQL para la construcción y operación con bases de datos.')">
+                            Ver Detalle
+                        </button>
+
+                       <button class="btn-custom-blue" onclick="startPurchaseProcess()">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Curso Desarrollo Web -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="img/1_1.png" alt="Curso de Desarrollo Web" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Curso de Desarrollo Web</h3>
+                        <p class="card-text">Aprende Front-End desde lo básico hasta lo avanzado con expertos.</p>
+                        <p class="course-price">$150 USD</p>
+                        
+                        <button type="button" class="btn-custom-blue" data-bs-toggle="modal" data-bs-target="#courseModal"
+                            onclick="openCourseModal('Desarrollo Web', 'El contenido que se desarrolla en el curso de Desarrollo Web es el siguiente: Introducción a la Programación, Introducción al Desarrollo Web - Front End, Desarrollo Web: Front End Intermedio, Introducción al desarrollo Web: Backend, Desarrollo Web - Backend Intermedio.')">
+                            Ver Detalle
+                        </button>
+
+                        <button class="btn-custom-blue" onclick="startPurchaseProcess()">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal para Detalle de Curso -->
+<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModalLabel">Detalle del Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body" id="courseModalBody">
+                <!-- Contenido dinámico del curso se cargará aquí -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+       <!-- Modal de Registro -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Registro de Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="openPaymentModal()">Continuar al Pago</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Seleccione su método de pago:</p>
+                    <div class="payment-methods d-flex justify-content-around">
+                        <img src="ruta-a-tu-imagen-paypal.png" alt="PayPal" width="80">
+                        <img src="ruta-a-tu-imagen-visa.png" alt="Visa" width="80">
+                        <img src="ruta-a-tu-imagen-bitcoin.png" alt="Bitcoin" width="80">
+                    </div>
+                    <button type="button" class="btn btn-success mt-4 w-100" onclick="completePurchase()">Realizar Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Compra Exitosa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¡Gracias por tu compra! Tu clave de acceso al campus es: <strong>ABC123</strong></p>
+                    <p>Guarda esta clave para ingresar al campus y acceder a tu curso.</p>
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Logo y descripción -->
+                <div class="col-md-4 text-center text-md-left mb-3 mb-md-0">
+                    <img src="img/logo.png" alt="Code Institute" class="footer-logo mb-3">
+                    <p class="footer-description">Desarrolla tu futuro con nosotros. Cursos de tecnología diseñados por
+                        expertos para la industria.</p>
+                </div>
+    
+                <!-- Enlaces de navegación -->
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5 class="footer-title">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="cursos.html" class="footer-link">Cursos</a></li>
+                        <li><a href="acerca.html" class="footer-link">Acerca de Nosotros</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Iconos de redes sociales -->
+                <div class="col-md-4 text-center text-md-right">
+                    <h5 class="footer-title">Síguenos</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/"><img src="img/face.png" alt="Facebook" class="social-icon"></a>
+                    <a href="https://www.instagram.com/"><img src="img/insta.png" alt="Instagram" class="social-icon"></a>
+                    <a href="https://x.com/"><img src="img/x.png" alt="Twitter" class="social-icon"></a>
+                    <a href="https://www.linkedin.com/"><img src="img/linkedin.png" alt="LinkedIn" class="social-icon"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Texto adicional (derechos de autor) -->
+            <div class="text-center mt-4">
+                <small>&copy; 2024 Code Institute. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <script>
+        function openCourseModal(title, description) {
+            // Cambiar el título del modal
+            document.getElementById("courseModalLabel").innerText = title;
+
+            // Cambiar el contenido del cuerpo del modal
+            document.getElementById("courseModalBody").innerText = description;
+        }
+    </script>
+    
+    <script>
+  function verificarRegistro() {
+    // Comprobar si el usuario está registrado
+    const registrado = localStorage.getItem('usuarioRegistrado');
+
+    if (registrado) {
+      // Si está registrado, redirigir al carrito
+      window.location.href = 'carrito.html';
+    } else {
+      // Si no está registrado, redirigir al registro
+      window.location.href = 'registro.html';
+    }
+  }
+</script>
+
+
+    <script>
+  function verificarRegistro() {
+    // Comprobar si el usuario está registrado
+    const registrado = localStorage.getItem('usuarioRegistrado');
+
+    if (registrado) {
+      // Si está registrado, redirigir al carrito
+      window.location.href = 'carrito.html';
+    } else {
+      // Si no está registrado, redirigir al registro
+      window.location.href = 'registro.html';
+    }
+  }
+</script>
+
+
+<script>
+        // Función para iniciar el proceso de compra
+        function startPurchaseProcess() {
+            var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+            registrationModal.show();
+        }
+
+        // Función para abrir el modal de pago
+        function openPaymentModal() {
+            var registrationModal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+            registrationModal.hide();
+            var paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            paymentModal.show();
+        }
+
+        // Función para completar la compra
+        function completePurchase() {
+            var paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
+            paymentModal.hide();
+            var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            confirmationModal.show();
+        }
+    </script>
+
+
+<!-- Botones flotantes -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/1234567890" class="btn-floating" title="Contactar por WhatsApp" target="_blank">
+      Contacto
+    </a>
+  </div>
+
+
+</body>
+
+</html>

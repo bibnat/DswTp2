@@ -1,0 +1,193 @@
+$primary-color: #2c2f48;
+$secondary-color: #f8f9fa;
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background-color: $primary-color !important;
+    color: $secondary-color;
+    padding: 50px 0;
+    text-align: center;
+    h1 {
+        font-size: 2rem;
+    }
+}// Estilos para los enlaces del navbar
+.navbar {
+  &-light {
+    .navbar-nav {
+      .nav-link {
+        color: #2C2E83; // Color azul
+        transition: color 0.3s ease, background-color 0.3s ease;
+
+        &:hover {
+          color: #ffffff; // Cambia el color del texto a blanco en hover
+          background-color: #2C2E83; // Fondo azul en hover
+          border-radius: 5px; // Opcional: redondea el fondo
+          padding: 5px 10px; // Añade espacio alrededor del enlace en hover
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// clase personalizada para botones de color azul
+.btn-custom-blue {
+  background-color: #2C2E83;
+  border-color: #2C2E83;
+  color: #ffffff;
+
+  &:hover {
+    background-color: darken(#2C2E83, 10%);
+    border-color: darken(#2C2E83, 10%);
+  }
+}
+
+.carrito-container {
+  padding: 50px 0;
+  h2 {
+    color: #2C2E83;
+  }
+  table {
+    width: 100%;
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+  }
+  .btn-custom-blue {
+    background-color: #2C2E83;
+    color: #ffffff;
+    &:hover {
+      background-color: #1f215d;
+    }
+  }
+}
+
+
+
+.logo {
+    max-width: 150px; // Tamaño adecuado para pantallas grandes
+    height: auto;     // Mantiene la proporción
+    margin-bottom: 10px; // Espaciado inferior opcional
+}
+
+// Media query para pantallas pequeñas
+@media (max-width: 768px) {
+    .logo {
+        max-width: 100px; // Tamaño más pequeño en pantallas pequeñas
+    }
+}
+
+/* Asegura que las imágenes a los lados del botón tengan un tamaño adecuado */
+.img-side {
+    width: 300px; /* Ajusta este tamaño según tus necesidades */
+    height: auto;
+}
+
+
+
+/* Estilos para el contenedor flexible */
+.responsive-container {
+    gap: 10px; /* Espacio entre las imágenes y el botón */
+}
+
+/* Responsive: organiza el contenedor en columna en pantallas pequeñas */
+@media (max-width: 768px) {
+    .responsive-container {
+        flex-direction: column;
+    }
+}
+
+.cursos, .profesores {
+
+    
+    h2 {
+        font-weight: bold;
+    }
+    .card {
+        border: none;
+        img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            background-color: $secondary-color;
+        }
+    }
+
+    .row {
+        justify-content: center; // Para centrar las tarjetas horizontalmente
+        gap: 20px; // Añade espacio entre las tarjetas
+    }
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los íconos */
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    height: 30px; /* Ajusta el tamaño de los íconos */
+    width: auto;
+}
+
+footer {
+    background-color: $primary-color;
+
+    .footer-logo {
+        max-width: 120px; // Tamaño adecuado para el logo en el footer
+        height: auto;     // Mantiene la proporción del logo
+    }
+
+    .social-icons {
+        a {
+            margin: 0 10px;
+
+            img {
+                width: 24px; // Tamaño de los íconos sociales
+                height: auto;
+            }
+        }
+    }
+}
+
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+
+  .btn-floating {
+    background-color: #2C2E83; /* Color azul */
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background-color: #1f215d;
+    }
+  }
+}
+
+
+@import "../lib/bootstrap/scss/bootstrap.scss";
+
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Institute - Ingreso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- Encabezado Hero -->
+    <header class="hero">
+        <div class="container">
+            <h1>Ingreso a Campus y Foro</h1>
+            <p>Ingresa con tus datos de registro</p>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <h1>Ingreso</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor de las tarjetas (cards) -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/f.png" class="card-img-top" alt="Foro">
+                    <div class="card-body">
+                        <h3>Acceso al Foro</h3>
+                        <p>Participa en las discusiones de la comunidad.</p>
+                        <button class="btn-custom-blue" onclick="requestLogin('Foro')">Ingresar al Foro</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/j.png" class="card-img-top" alt="Campus">
+                    <div class="card-body">
+                        <h3>Acceso al Campus</h3>
+                        <p>Accede a tus cursos y materiales de aprendizaje.</p>
+                        <button class="btn-custom-blue" onclick="requestLogin('Campus')">Ingresar al Campus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Debes iniciar sesión para acceder a <span id="accessType"></span>.</p>
+                    <input type="text" class="form-control mb-3" placeholder="Usuario">
+                    <input type="password" class="form-control mb-3" placeholder="Contraseña">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-custom-blue">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Logo y descripción -->
+                <div class="col-md-4 text-center text-md-left mb-3 mb-md-0">
+                    <img src="img/logo.png" alt="Code Institute" class="footer-logo mb-3">
+                    <p class="footer-description">Desarrolla tu futuro con nosotros. Cursos de tecnología diseñados por expertos para la industria.</p>
+                </div>
+
+                <!-- Enlaces de navegación -->
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5 class="footer-title">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Inicio</a></li>
+                        <li><a href="cursos.html" class="footer-link">Cursos</a></li>
+                        <li><a href="acerca.html" class="footer-link">Acerca de Nosotros</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Iconos de redes sociales -->
+                <div class="col-md-4 text-center text-md-right">
+                    <h5 class="footer-title">Síguenos</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/"><img src="img/face.png" alt="Facebook" class="social-icon"></a>
+                        <a href="https://www.instagram.com/"><img src="img/insta.png" alt="Instagram" class="social-icon"></a>
+                        <a href="https://x.com/"><img src="img/x.png" alt="Twitter" class="social-icon"></a>
+                        <a href="https://www.linkedin.com/"><img src="img/linkedin.png" alt="LinkedIn" class="social-icon"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto adicional (derechos de autor) -->
+            <div class="text-center mt-4">
+                <small>&copy; 2024 Code Institute. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function requestLogin(accessType) {
+            document.getElementById('accessType').textContent = accessType;
+            var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+            loginModal.show();
+        }
+    </script>
+
+    <!-- Botones flotantes -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/1234567890" class="btn-floating" title="Contactar por WhatsApp" target="_blank">
+      Contacto
+    </a>
+  </div>
+
+</body>
+</html>
